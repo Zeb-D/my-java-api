@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="1024" />
+        <property name="maxIdle" value="10"/>
+        <property name="maxWaitMillis" value="3000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="numTestsPerEvictionRun" value="3"/>
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+        <property name="testWhileIdle" value="true"/>
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="192.168.2.63" />
+        <property name="port" value="6379" />
+        <property name="password" value="" />
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory"   ref="connectionFactory" />
+    </bean>
+    <bean id="serializer" class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <route startupOrder="1">
+            <from uri="timer://foo?fixedRate=true&amp;period=1000"/>
+            <setHeader headerName="CamelRedis.Command">
+                <constant>SET</constant>
+            </setHeader>
+            <setHeader headerName="CamelRedis.Key">
+                <constant>keyOne</constant>
+            </setHeader>
+            <setHeader headerName="CamelRedis.Value">
+                <constant>valueOne</constant>
+            </setHeader>
+            <to uri="spring-redis://192.168.2.63:6379?connectionFactory=#connectionFactory&amp;serializer=#serializer"/>
+        </route>
+    </camelContext>
+
+</beans>

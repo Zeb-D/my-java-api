@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <pattern>[%thread][%d{yyyy-MM-dd HH:mm:ss} %5p %c:%L] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>logs/admin.log</file>
+        <encoder charset="UTF-8">
+            <pattern>[%thread][%d{yyyy-MM-dd HH:mm:ss} %5p %c:%L] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="org.springframework" level="debug" />
+    <logger name="org.springframework.beans" level="debug" />-->
+    <logger name="org.apache.zookeeper" level="debug"/>
+    <logger name="log4j.logger.java.sql.ResultSet" level="debug"/>
+    <logger name="log4j.logger.org.apache" level="debug"/>
+    <logger name="log4j.logger.java.sql.Connection" level="debug"/>
+    <logger name="log4j.logger.java.sql.Statement" level="debug"/>
+    <logger name="log4j.logger.java.sql.PreparedStatement" level="debug"/>
+    <logger name="org.apache.zookeeper" level="debug"/>
+    <logger name="com.pagoda.nerp.*" level="debug"/>
+
+    <root level="debug">
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+</configuration>
