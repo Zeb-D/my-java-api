@@ -32,6 +32,15 @@ public class JMHFirstBenchmark {
         return 0;
     }
 
+    /**
+     * Unable to find the resource: /META-INF/BenchmarkList?
+     *<pre>
+     *     必须本程序运行 必须要有org.openjdk.jmh:jmh-generator-annprocess
+     *     IDEA config ： Preferences -> Build, Execution, Deployment -> Compiler -> Annotation Processors
+     *</pre>
+     * @param args
+     * @throws RunnerException
+     */
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMHFirstBenchmark.class.getSimpleName())
