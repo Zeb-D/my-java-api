@@ -8,7 +8,7 @@ import java.util.Arrays;
  *
  * @author zouYd created on 2019-01-15
  */
-public class specialStr {
+public class SpecialStr {
     public static final String[] MONTHS = {"㋀", "㋁", "㋂", "㋃", "㋄", "㋅", "㋆", "㋇", "㋈", "㋉", "㋊", "㋋"};
     public static final String[] DAYS = {"㏠", "㏡", "㏢", "㏣", "㏤", "㏥", "㏦", "㏧", "㏨", "㏩", "㏪", "㏫", "㏬", "㏭",
             "㏮", "㏯", "㏰", "㏱", "㏲", "㏳", "㏴", "㏵", "㏶", "㏷", "㏸", "㏹", "㏺", "㏻", "㏼", "㏽", "㏾"};
