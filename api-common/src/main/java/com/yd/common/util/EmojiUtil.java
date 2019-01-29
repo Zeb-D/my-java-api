@@ -137,7 +137,7 @@ public class EmojiUtil {
     }
 
     public static void main(String[] args) {
-        String content = "my name is Y东，O(∩_∩)O 哈哈 ㋀㏼";
+        String content = "my name is Y东，O(∩_∩)O 哈哈 ㋀㏼  ██▓▒░";
         System.out.println(convertEmoji(content));
         System.out.println(reConvertEmoji(convertEmoji(content)));
         System.out.println(isEmojiNumber(convertEmoji(content)));
