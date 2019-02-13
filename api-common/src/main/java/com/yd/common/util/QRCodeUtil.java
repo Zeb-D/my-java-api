@@ -15,7 +15,7 @@ import java.io.IOException;
 public class QRCodeUtil {
     //根据链接生成JPG文件
     public static void generateCode(String url) throws IOException {
-        ByteArrayOutputStream output = QRCode.from(url).to(ImageType.PNG).stream();
+        ByteArrayOutputStream output = QRCode.from(url).to(ImageType.PNG).withCharset("utf-8").stream();
         FileOutputStream fileOutputStream = new FileOutputStream(new File("D:/QR.jpg"));
         fileOutputStream.write(output.toByteArray());
         output.close();
