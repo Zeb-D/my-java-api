@@ -6,7 +6,15 @@ import java.util.stream.Stream;
  * 排序算法
  *
  * @author Yd on  2018-08-30
- * @description
+ * @description 排序方法
+ *              平均情况	     最好情况 	最坏情况	    辅助空间	    稳定性
+ * 冒泡排序	     O(n^2)	    O(n)	    O(n^2)	    O(1)	    稳定
+ * 简单选择排序	O(n^2)	    O(n^2)	    O(n^2)	    O(1)	    稳定
+ * 直接插入排序	O(n^2)	    O(n)	    O(n^2)	    O(1)	    稳定
+ * 希尔排序	O(nlogn)~O(n^2)	O(n^1.3)	O(n^2)	    O(1)	    不稳定
+ * 堆排序	    O(nlogn)	O(nlogn)	O(nlogn)	    O(1)	    不稳定
+ * 归并排序	    O(nlogn)	O(nlogn)	O(nlogn)	    O(n)	    稳定
+ * 快速排序	    O(nlogn)	O(nlogn)	O(n^2)	O(logn)~O(n)
  **/
 public class Sort {
 
@@ -251,34 +259,30 @@ public class Sort {
     }
 
 
-    public static void quickSort(int a[],int left,int right)
-    {
+    public static void quickSort(int a[], int left, int right) {
         int dp;
-        if(left<right)
-        {
-            dp=partition(a,left,right);
-            quickSort(a,left,dp-1);
-            quickSort(a,dp+1,right);
+        if (left < right) {
+            dp = partition(a, left, right);
+            quickSort(a, left, dp - 1);
+            quickSort(a, dp + 1, right);
         }
     }
 
-    public static int partition(int a[],int left,int right)
-    {
-        int i=left;
-        int j=right;
-        int temp=a[i];
-        while(i<j)
-        {
-            while(i<j && a[j]>=temp)
+    public static int partition(int a[], int left, int right) {
+        int i = left;
+        int j = right;
+        int temp = a[i];
+        while (i < j) {
+            while (i < j && a[j] >= temp)
                 j--;
-            if(i<j)
-                a[i]=a[j];
-            while(i<j && a[i]<=temp)
+            if (i < j)
+                a[i] = a[j];
+            while (i < j && a[i] <= temp)
                 i++;
-            if(i<j)
-                a[j]=a[i];
+            if (i < j)
+                a[j] = a[i];
         }
-        a[i]=temp;
+        a[i] = temp;
         return i;
     }
 
@@ -287,7 +291,7 @@ public class Sort {
 //        bubbleSort(arr);
 //        selectionSort(arr);
 //        insertionSort(arr);
-        quickSort(arr,0,arr.length-1);
+        quickSort(arr, 0, arr.length - 1);
         Stream.of(arr).skip(1).forEach(System.out::print);
 
     }
