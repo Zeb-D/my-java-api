@@ -1,5 +1,7 @@
 package com.yd.kotlin
 
+import org.apache.commons.lang3.StringUtils
+
 class Test2 {
 
     // 声明可空变量
@@ -17,4 +19,11 @@ class Test2 {
 
 fun main() {
     Test2()
+    val name = String()
+    println(name == null)
+    println(StringUtils.isEmpty(name))
+
+    var age: Int? = null
+    val age1 = age ?: 0
+    println(age1)
 }
