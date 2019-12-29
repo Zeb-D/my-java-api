@@ -100,7 +100,7 @@ public class PinyinUtil {
     }
 
     public static void main(String[] args) {
-        String cnStr = "xiao";
+        String cnStr = "Zeb灬D";
         String znStr = "曾小贤";
         System.out.println(getAllCharPingYin(znStr));
         System.out.println(getHeadCharPinYin(znStr));

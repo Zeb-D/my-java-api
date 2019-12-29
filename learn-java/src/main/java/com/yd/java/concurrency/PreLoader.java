@@ -45,7 +45,7 @@ public class PreLoader {
        }
 
        public static ProductInfo loadProductInfo(){
-           String GET_ORGLIST_URL = "http://b2b.test.pagoda.com.cn/base/pgsearch.php?data=acc_dc&format=json";
+           String GET_ORGLIST_URL = "http://b2b.test.pg.com.cn/base/pgsearch.php?data=acc_dc&format=json";
            ClientResult clientResult = HttpClientUtil.get(GET_ORGLIST_URL, null);
            if (clientResult != null) {
                HttpStatus status = clientResult.getStatus();

@@ -12,7 +12,11 @@ import java.util.Set;
 
 /**
  * Buffer、Channel、selector
- *
+ *Java NIO根据操作系统不同， 针对nio中的Selector有不同的实现：
+ * macosx:KQueueSelectorProvider
+ * solaris:DevPollSelectorProvider
+ * Linux:EPollSelectorProvider (Linux kernels >= 2.6)或PollSelectorProvider
+ * windows:WindowsSelectorProvider
  * @author Yd on  2018-05-15
  * @description
  **/

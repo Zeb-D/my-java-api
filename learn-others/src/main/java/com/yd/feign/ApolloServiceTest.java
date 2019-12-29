@@ -19,7 +19,7 @@ public class ApolloServiceTest {
                 .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
 //                .requestInterceptor(new BasicAuthRequestInterceptor("username", "password"))
-                .target(ApolloService.class, " http://erp2.test.pagoda.com.cn:7080");
+                .target(ApolloService.class, " http://erp2.test.pg.com.cn:7080");
         System.out.println(apolloService.queryConfigs("SampleApp","application"));
 
     }

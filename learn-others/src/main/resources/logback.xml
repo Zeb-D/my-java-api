@@ -22,7 +22,7 @@
     <logger name="log4j.logger.java.sql.Statement" level="debug"/>
     <logger name="log4j.logger.java.sql.PreparedStatement" level="debug"/>
     <logger name="org.apache.zookeeper" level="debug"/>
-    <logger name="com.pagoda.nerp.*" level="debug"/>
+    <logger name="com.pg.nerp.*" level="debug"/>
 
     <root level="debug">
         <appender-ref ref="console" />
