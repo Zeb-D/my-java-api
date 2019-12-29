@@ -17,7 +17,7 @@
     <properties>
         <maven_deploy_skip>true</maven_deploy_skip>
         <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
-        <spring.security.version>4.2.4.RELEASE</spring.security.version>
+        <spring.security.version>5.2.1.RELEASE</spring.security.version>
         <aspectjweaver.version>1.8.6</aspectjweaver.version>
         <fastjson.version>1.2.29</fastjson.version>
         <tomcat-jdbc.version>7.0.42</tomcat-jdbc.version>
