@@ -34,7 +34,7 @@ public class TestMain {
         }
     }
 
-    public static void test(String param1, int param2) {
-        System.out.println(param1 + param2);
+    public static void test(String param1, int intParam2) {
+        System.out.println(param1 + intParam2);
     }
 }

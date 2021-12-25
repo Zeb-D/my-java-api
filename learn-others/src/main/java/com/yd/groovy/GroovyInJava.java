@@ -47,7 +47,7 @@ public class GroovyInJava {
 
         GroovyShell shell = new GroovyShell(binding);
 
-        String script = "str.responseTime) 100 && str.status == \"running\"";
+        String script = "str.responseTime> 100 && str.status == \"running\"";
         // redirect output:
         PrintStream oldOut = System.out;
         Object value;
@@ -56,10 +56,10 @@ public class GroovyInJava {
                 value = shell.evaluate(script);
                 System.out.println(value);
 
-//			logMap3.put("responseTime","1");
-//			String scriptTemp = "Long.parseLong(str.responseTime) > 0 && str.status == \"running\"";
-//			value = shell.evaluate(scriptTemp);
-//			System.out.println(value);
+                logMap3.put("responseTime", "1");
+                String scriptTemp = "Long.parseLong(str.responseTime) > 0 && str.status == \"running\"";
+                value = shell.evaluate(scriptTemp);
+                System.out.println(value);
             } finally {
 
             }
